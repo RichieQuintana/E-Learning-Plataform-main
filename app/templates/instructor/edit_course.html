@@ -1,0 +1,16 @@
+{% extends "instructor/instructor_dashboard.html" %}
+
+{% block title %}Editar Curso{% endblock %}
+
+{% block content %}
+<h1>Editar Curso: {{ course.name }}</h1>
+<form method="POST">
+    <label for="title">Título del Curso</label>
+    <input type="text" id="title" name="title" value="{{ course.name }}" required>
+
+    <label for="description">Descripción</label>
+    <textarea id="description" name="description" required>{{ course.description }}</textarea>
+
+    <button type="submit" class="btn">Actualizar Curso</button>
+</form>
+{% endblock %}

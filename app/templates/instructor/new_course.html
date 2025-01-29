@@ -1,0 +1,18 @@
+{% extends "instructor/base_instructor.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">Crear Nuevo Curso</h1>
+    <form method="POST" action="{{ url_for('new_course') }}">
+        <div class="mb-3">
+            <label for="title" class="form-label">Título del Curso</label>
+            <input type="text" class="form-control" id="title" name="title" required>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Descripción del Curso</label>
+            <textarea class="form-control" id="description" name="description" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Crear Curso</button>
+    </form>
+</div>
+{% endblock %}

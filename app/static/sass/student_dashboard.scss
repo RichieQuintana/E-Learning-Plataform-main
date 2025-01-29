@@ -1,0 +1,67 @@
+// Variables para los colores
+$primary-color: #0073e6;
+$secondary-color: #f4f4f4;
+$text-color: #333;
+
+// Estilos Generales
+body {
+    font-family: Arial, sans-serif;
+    background-color: $secondary-color;
+    margin: 0;
+    padding: 0;
+}
+
+// Estilos del Header
+h1 {
+    text-align: center;
+    color: $primary-color;
+}
+
+// Navegación
+nav {
+    display: flex;
+    background-color: $primary-color;
+    color: white;
+    padding: 10px;
+    justify-content: space-between;
+
+    a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+// Icono
+.icon {
+    margin-right: 5px;
+}
+
+// Contenido del Dashboard
+ul {
+    list-style-type: none;
+    padding: 0;
+    li {
+        font-size: 18px;
+        margin: 10px 0;
+        i {
+            margin-right: 8px;
+        }
+    }
+}
+
+// Estilos de botones
+.button {
+    display: inline-block;
+    padding: 10px 15px;
+    color: white;
+    background-color: $primary-color;
+    border-radius: 5px;
+    text-decoration: none;
+    &:hover {
+        background-color: darken($primary-color, 10%);
+    }
+}

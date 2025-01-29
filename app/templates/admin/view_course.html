@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Curso</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_dashboard.css') }}">
+</head>
+<body>
+    <div class="admin-container">
+        {% include 'admin/sidebar.html' %}
+
+        <main class="main-content">
+            <header class="top-bar">
+                <h1>Detalles del Curso</h1>
+            </header>
+
+            <div class="course-details">
+                <h2>{{ course.name }}</h2>
+                <p>{{ course.description }}</p>
+                <h3>Instructor: {{ course.instructor.username }}</h3>
+                <h4>Módulos:</h4>
+                <ul>
+                    {% for module in course.modules %}
+                        <li>{{ module.title }} - {{ module.description }}</li>
+                    {% else %}
+                        <li>No hay módulos en este curso.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

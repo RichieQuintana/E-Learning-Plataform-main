@@ -1,0 +1,38 @@
+{% extends "instructor/base_instructor.html" %}
+
+{% block title %}Dashboard del Instructor{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Panel de Instructor</h1>
+
+<!-- Rankings y Métricas -->
+{% if course_metrics %}
+<div class="mb-4">
+    <h3>Ranking de Cursos</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Posición</th>
+                <th>Curso</th>
+                <th>Estudiantes Inscritos</th>
+                <th>Promedio de Notas</th>
+                <th>% Finalización</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i, metric in enumerate(course_metrics) %}
+            <tr>
+                <td>{{ i + 1 }}</td>
+                <td>{{ metric.course.name }}</td>
+                <td>{{ metric.total_students }}</td>
+                <td>{{ metric.average_score }}</td>
+                <td>{{ metric.completion_rate }}%</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<p>No hay datos para mostrar en el ranking de cursos.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mb-4">Mis Cursos</h1>
+<div class="row">
+    {% for course in courses %}
+    <div class="col-md-4">
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">{{ course.course.name }}</h5>
+                <p class="card-text">{{ course.course.description }}</p>
+                {% if course.progress < 100 %}
+                    <span class="badge bg-warning text-dark">En progreso: {{ "%.2f"|format(course.progress) }}%</span>
+                {% else %}
+                    <span class="badge bg-success">Completado</span>
+                {% endif %}
+                <a href="{{ url_for('course_content', course_id=course.course.id) }}" class="btn btn-primary">Entrar al Curso</a>
+            </div>
+        </div>
+    </div>    
+    
+    </div>
+    {% else %}
+    <p>No estás inscrito en ningún curso.</p>
+    {% endfor %}
+</div>
+{% endblock %}

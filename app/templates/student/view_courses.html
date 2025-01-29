@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Explorar Cursos{% endblock %}
+
+{% block content %}
+<h1>Explorar Cursos</h1>
+<div class="row">
+    {% for course in courses %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ course.name }}</h5>
+                    <p class="card-text">{{ course.description }}</p>
+                    <form method="POST" action="{{ url_for('enroll_course', course_id=course.id) }}">
+                        <button type="submit" class="btn btn-success">Inscribirse</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

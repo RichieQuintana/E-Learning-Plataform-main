@@ -1,0 +1,17 @@
+{% extends "instructor/instructor_dashboard.html" %}
+
+{% block content %}
+<h1>Editar Contenido: {{ content_item.title }}</h1>
+<form method="POST">
+    <div class="mb-3">
+        <label for="title" class="form-label">Título</label>
+        <input type="text" class="form-control" id="title" name="title" value="{{ content_item.title }}" required>
+    </div>
+    <div class="mb-3">
+        <label for="content" class="form-label">Contenido</label>
+        <textarea class="form-control" id="content" name="content" rows="5">{{ content_item.content }}</textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+    <a href="{{ url_for('module_details', module_id=content_item.module_id) }}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}
