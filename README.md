@@ -7,6 +7,20 @@ realizar seguimientos de su progreso e interactuar con instructores y compañero
 Ofrece una interfaz intuitiva y funcionalidades backend para gestionar contenido de cursos, 
 usuarios y evaluaciones.
 
+__Mejoras Practicas en Core MVC__
+
+**Principio SOLID: Responsabilidad Única (SRP)**
+Separación de responsabilidades en el manejo de usuarios y autenticación.
+
+**Principio SOLID: Sustitución de Liskov (LSP)**
+Diseño flexible para manejar diferentes tipos de contenido (video, texto, cuestionarios) sin romper la funcionalidad existente.
+
+**Patrón de Diseño: Strategy**
+Clases para manejar diferentes estrategias de contenido dentro del sistema.
+
+**Patrón de Diseño: Decorator**
+Decoradores para restringir acceso según roles.
+
 __Características__
 **Autenticación de Usuario:** Registro, inicio de sesión y gestión de contraseñas.
 
